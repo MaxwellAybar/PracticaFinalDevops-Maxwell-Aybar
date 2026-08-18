@@ -40,5 +40,6 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/mi-app-devops:latest
 
       - name: 7. Desplegar en Render
+        if: secrets.RENDER_DEPLOY_HOOK != ''
         run: |
           curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
