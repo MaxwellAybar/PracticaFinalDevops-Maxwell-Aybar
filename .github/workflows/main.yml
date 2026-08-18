@@ -40,6 +40,11 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/mi-app-devops:latest
 
       - name: 7. Desplegar en Render
-        if: ${{ secrets.RENDER_DEPLOY_HOOK != '' }}
+        env:
+          RENDER_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
         run: |
-          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
+          if [ -n "$RENDER_HOOK" ]; then
+            curl -X POST "$RENDER_HOOK"
+          else
+            echo "RENDER_DEPLOY_HOOK no está configurado aún. Saltando despliegue."
+          fi
