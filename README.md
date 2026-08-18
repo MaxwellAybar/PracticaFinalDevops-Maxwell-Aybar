@@ -2,14 +2,15 @@
 
 Este proyecto implementa un flujo completo de Integración Continua y Despliegue Continuo (CI/CD) para una aplicación web desarrollada en Python con Flask.
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Tecnologías utilizadas
 
-* **Backend:** Python 3.11 + Flask
-* **Testing:** Pytest
-* **Contenedores:** Docker
-* **Registro:** Docker Hub
-* **Orquestación CI/CD:** GitHub Actions
-* **Despliegue Cloud:** Render
+* Python
+* Flask
+* Pytest
+* Docker
+* Docker Hub
+* GitHub Actions
+* Render
 
 ## 🔄 Flujo del Pipeline CI/CD
 
